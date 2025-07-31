@@ -103,7 +103,7 @@ export default defineConfig([globalIgnores([
             argsIgnorePattern: "^_.*?$",
         }],
 
-        "import/order": ["warn", {
+        "import/order": ["off", {
             groups: [
                 "type",
                 "builtin",
@@ -133,7 +133,7 @@ export default defineConfig([globalIgnores([
             reservedFirst: true,
         }],
 
-        "padding-line-between-statements": ["warn", {
+        "padding-line-between-statements": ["off", {
             blankLine: "always",
             prev: "*",
             next: "return",
