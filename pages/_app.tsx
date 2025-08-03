@@ -14,6 +14,8 @@ import {
 import { fontSans, fontMono } from "@/config/fonts";
 import "@/styles/globals.css";
 import { onErrorHandler } from "@/libs/axios/responseHandler";
+import { ToasterProvider } from "@/context/ToasterContex";
+import AppShells from "@/components/common/AppShells";
 
 // queryCache digunakan untuk menyimpan data hasil query yang kemudian akan digunakan untuk handle terhadap error
 
@@ -44,7 +46,11 @@ export default function App({
 			<QueryClientProvider client={queryClient}>
 				<HeroUIProvider navigate={router.push}>
 					<NextThemesProvider attribute="class" defaultTheme="light">
-						<Component {...pageProps} />
+						<ToasterProvider>
+							<AppShells>
+								<Component {...pageProps} />
+							</AppShells>
+						</ToasterProvider>
 					</NextThemesProvider>
 				</HeroUIProvider>
 			</QueryClientProvider>

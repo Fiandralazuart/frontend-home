@@ -3,7 +3,7 @@ import AuthLayout from "@/layouts/authLayout"
 
 const RegisterPage = () => {
 	return (
-		<AuthLayout title="Service | Auth">
+		<AuthLayout title="Service | Register">
 			<Register />
 		</AuthLayout>
 	)

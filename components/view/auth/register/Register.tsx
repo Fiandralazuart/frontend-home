@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Card, CardHeader, CardBody, CardFooter } from "@heroui/card";
+import { Card, CardBody, CardFooter, CardHeader } from "@heroui/card";
 import { Controller } from "react-hook-form";
 import useRegister from "./useRegister";
 import { Input } from "@heroui/input";
@@ -27,16 +27,18 @@ const Register = () => {
 		<div className="flex flex-col items-center justify-center gap-10 lg:gap-25 lg:flex-row">
 			<div>
 				<Image
-					src="/images/general/login-baru.png"
 					alt="logo"
+					height={500}
+					src="/images/general/login-baru.png"
 					width={500}
-					height={300}
 				/>
 			</div>
 			<div>
-				<Card className="text-black bg-white">
-					<CardBody className="flex flex-col items-center px-10 py-8">
-						<h2 className="text-2xl">Create Account</h2>
+				<Card className="p-8 text-black bg-white">
+					<CardHeader className="flex justify-center">
+						<h2 className="text-2xl font-bold">Create Account</h2>
+					</CardHeader>
+					<CardBody className="flex flex-col items-center ">
 						{errors.root && (
 						<p className="mb-2 font-medium text-danger">
 							{errors?.root?.message}
@@ -161,14 +163,15 @@ const Register = () => {
 								{isPendingMutateRegister ? <Spinner /> : "Register"}
 							</Button>
 						</form>
-
-						<p className="mt-5 text-sm text-default-400">
+					</CardBody>
+					<CardFooter className="flex justify-center">
+						<p className="text-sm text-default-400">
 							Already Have An Account? &nbsp;
 							<Link className="font-semibold text-blue-500 " href="/auth/login">
 								Log in
 							</Link>
 						</p>
-					</CardBody>
+					</CardFooter>
 				</Card>
 			</div>
 		</div>
