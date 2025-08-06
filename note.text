@@ -1,6 +1,32 @@
-Frontend
+Project Planning
+
+under 30 juli 2025
+ERD dan flow sederhana					- progress
+design UI/UX tahap awal					- clear
+setup backend								- clear
+setup Frontend								- clear
+register dan login page					- clear
+activation page							- clear
 
 02 agustus 2025
-membuat toaster 						- clear
-membuat appshell 						- clear
-membuat activation system			- progres
+membuat toaster 							- clear
+membuat appshell 							- clear
+membuat activation system				- clear
+
+04 agustus 2025
+middleware handle otorisasi			- clear
+middleware handle redirect page		- clear
+update design UI/UX Accomodation		- clear
+
+05 agustus 2025
+design UI/UX Room Type					- clear
+design UI/UX Reservation				- clear
+design UI/UX banner						- clear
+design UI/UX member						- clear
+backend Type models & controller		- clear
+
+06 agustus 2025
+Frontend room type						- planning
+hooks debounce								- planning
+hooks url									- planning
+
