@@ -1,5 +1,4 @@
 Project Planning
-
 under 30 juli 2025
 ERD dan flow sederhana					- progress
 design UI/UX tahap awal					- clear
@@ -26,7 +25,16 @@ design UI/UX member						- clear
 backend Type models & controller		- clear
 
 06 agustus 2025
-Frontend room type						- planning
-hooks debounce								- planning
-hooks url									- planning
+prepare dashboard layout				- clear
+prepare Datatable							- clear
+prepare DropDownAction					- clear
+Frontend room type tahap awal			- clear
+
+07 agustus 2025
+hooks debounce								- clear
+hooks url									- clear
+hanlde upload file						- planning
+Frontend add room type					- planning
+Frontend details room type				- planning
+Frontend delete room type				- planning
 

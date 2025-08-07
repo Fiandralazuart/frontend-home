@@ -159,7 +159,7 @@ const Register = () => {
 								)}
 							/>
 
-							<Button type="submit">
+							<Button className="text-white bg-default-700" type="submit">
 								{isPendingMutateRegister ? <Spinner /> : "Register"}
 							</Button>
 						</form>

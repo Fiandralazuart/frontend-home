@@ -18,9 +18,9 @@ const DashboardLayout = (props: PropTypes) => {
 	return (
 		<>
 			<PageHead title={title} />
-			<div className="flex text-default">
+			<div className="flex text-black">
 				<DashboardLayoutSidebar sidebarItems={type === "admin" ? adminSidebar : memberSidebar} isOpen={isOpen} />
-				<div className="w-full min-h-screen p-8 bg-default-700">
+				<div className="w-full min-h-screen p-8">
 					<Navbar className="flex justify-between bg-transparent" classNames={{wrapper: "p-0"}} isBlurred={false} position="static">
 						<h1 className="text-2xl font-bold">{title}</h1>
 						<NavbarMenuToggle 
@@ -30,7 +30,7 @@ const DashboardLayout = (props: PropTypes) => {
 						/>
 
 					</Navbar>
-					<h2 className="text-lg">{description}</h2>
+					<h2 className="mb-4 text-lg">{description}</h2>
 					{children}
 				</div>
 			</div>

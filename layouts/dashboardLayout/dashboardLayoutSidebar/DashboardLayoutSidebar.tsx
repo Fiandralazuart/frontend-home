@@ -48,7 +48,7 @@ const DashboardLayoutSidebar = (props: PropTypes) => {
 						<ListboxItem
 							key={items.key}
 							startContent={items.icon}
-							className={cn("mt-3 text-2xl font-bold text-default", {
+							className={cn("mt-3 text-2xl font-bold text-black", {
 								"bg-gray-200": router.pathname.startsWith(items.href)
 							})}
 							textValue={items.label}
@@ -64,7 +64,7 @@ const DashboardLayoutSidebar = (props: PropTypes) => {
 			</div>
 			<div className="">
 				<Button
-					className="font-semibold text-left bg-white text-md text-default"
+					className="font-semibold text-left text-black bg-white text-md"
 					fullWidth
 					size="lg"
 					onPress={() =>

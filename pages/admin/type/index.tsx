@@ -1,13 +1,14 @@
+import RoomType from "@/components/view/admin/type";
 import DashboardLayout from "@/layouts/dashboardLayout";
 
 const TypePage = () => {
 	return (
 		<DashboardLayout
-			description="Manage Types of Room"
+			description="List of all room types, Add new type and manage existing type of room"
 			type="admin"
 			title="Room Type"
 		>
-			<p>text</p>
+			<RoomType />
 		</DashboardLayout>
 	);
 };

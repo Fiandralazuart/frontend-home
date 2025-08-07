@@ -84,7 +84,7 @@ const Login = () => {
 							)}
 						/>
 
-						<Button type="submit">
+						<Button className="text-white bg-default-700" type="submit">
 							{isPendingMutateLogin ? <Spinner /> : "Sign In"}
 						</Button>
 					</form>

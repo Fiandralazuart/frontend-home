@@ -41,7 +41,7 @@ const Activation = (props: PropTypes) => {
 					<h1 className="text-2xl font-bold">Activation {status === "failed" && "Failed"}</h1>
 					<p className="text-xl font-semibold text-default-300">Thankyou for register account in FixInAja</p>
 
-					<Button as={Link} href="/" className="mt-5"> 
+					<Button as={Link} href="/" className="mt-5 text-white bg-default-700"> 
 						Back Home
 					</Button>
 				</div>

@@ -10,7 +10,7 @@ const RegisterSuccess = () => {
 			<h1 className="text-xl font-bold text-black lg:text-3xl">Success Create Account</h1>
 			<h3 className="text-md lg:text-xl text-default-400">Please Check Your Email For Activation</h3>
 
-			<Button as={Link} href="/" className="text-sm lg:text-md">
+			<Button as={Link} href="/" className="text-sm text-white bg-default-700 lg:text-md">
 				Back Home
 			</Button>
 		</div>
