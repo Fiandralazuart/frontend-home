@@ -2,9 +2,11 @@ import useChangeUrl from "@/components/hooks/useChangeUrl";
 import typeServices from "@/services/type.service";
 import { useQuery } from "@tanstack/react-query";
 import { useRouter } from "next/router";
+import { useState } from "react";
 
 const useRoomType = () => {
 	const router = useRouter();
+	const [selectedId, setSelectedId] = useState<string>("")
 
 	const { currentLimit, currentPage, currentSearch } = useChangeUrl();
 
@@ -35,6 +37,9 @@ const useRoomType = () => {
 		isLoadingType,
 		isRefetchingType,
 		refetchType,
+
+		selectedId,
+		setSelectedId
 	};
 };
 

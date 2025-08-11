@@ -17,8 +17,8 @@ const DropDownActions = (props: PropTypes) => {
 
 	return (
 		<Dropdown className="bg-white shadow-sm">
-			<DropdownTrigger className="bg-transparent">
-				<Button isIconOnly size="sm">
+			<DropdownTrigger className="flex items-center justify-center bg-transparent">
+				<Button isIconOnly size="sm" className="w-full">
 					<CiMenuKebab className="text-black"/>
 				</Button>
 			</DropdownTrigger>

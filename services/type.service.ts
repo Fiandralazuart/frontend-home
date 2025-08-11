@@ -5,7 +5,8 @@ import { IRoomType } from "@/types/type";
 
 const typeServices = {
 	create: (payload: IRoomType) => instance.post(`${endpoint.TYPE}`, payload),
-	findAll: (params?: string) => instance.get(`${endpoint.TYPE}/?${params}`)
+	findAll: (params?: string) => instance.get(`${endpoint.TYPE}/?${params}`),
+	delete: (id:string) => instance.delete(`${endpoint.TYPE}/${id}`)
 }
 
 export default typeServices

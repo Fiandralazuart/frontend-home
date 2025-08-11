@@ -85,7 +85,7 @@ const Login = () => {
 						/>
 
 						<Button className="text-white bg-default-700" type="submit">
-							{isPendingMutateLogin ? <Spinner /> : "Sign In"}
+							{isPendingMutateLogin ? <Spinner size="sm"/> : "Sign In"}
 						</Button>
 					</form>
 				</CardBody>

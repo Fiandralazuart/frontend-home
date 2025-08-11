@@ -56,7 +56,7 @@ const AddTypeModal = (props: PropTypes) => {
 			<form onSubmit={handleSubmitForm(handleAddType)}>
 				<ModalContent>
 					<ModalHeader>
-						<p>Manage Add Room Type here</p>
+						<p>Add Room Type here</p>
 					</ModalHeader>
 					<ModalBody>
 						<p>information</p>
