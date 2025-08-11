@@ -24,7 +24,7 @@ const DashboardLayoutSidebar = (props: PropTypes) => {
 	const { sidebarItems, isOpen } = props;
 
 	return (
-		<div className={cn("fixed lg:relative z-60 -translate-x-full lg:translate-x-0 flex flex-col justify-between items-start min-h-screen p-8 min-w-[350px] shadow-md transition-all bg-white", {
+		<div className={cn("fixed lg:relative z-50 -translate-x-full lg:translate-x-0 flex flex-col justify-between items-start min-h-screen p-8 min-w-[350px] shadow-md transition-all bg-white", {
 			"translate-x-0": isOpen
 		}) 
 			}>

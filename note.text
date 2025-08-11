@@ -33,7 +33,12 @@ Frontend room type tahap awal			- clear
 07 agustus 2025
 hooks debounce								- clear
 hooks url									- clear
-hanlde upload file						- planning
+Frontend dashboard type room			- clear
+
+09 agustus 2025
+backend utils media uploader			- clear
+backend controller media				- clear
+Frontend inputFile file					- planning
 Frontend add room type					- planning
 Frontend details room type				- planning
 Frontend delete room type				- planning

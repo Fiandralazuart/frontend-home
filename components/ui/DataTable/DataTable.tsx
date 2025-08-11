@@ -23,7 +23,7 @@ interface PropTypes {
 	renderCell: (type: Record<string, unknown>, columnKey: Key) => ReactNode;
 	isLoading: boolean;
 	buttonTopContent: string;
-	onClickbuttonTopContent?: () => void;
+	onClickbuttonTopContent: () => void;
 	emptyContent: string;
 	totalPages: number;
 }
@@ -65,7 +65,7 @@ const DataTable = (props: PropTypes) => {
 					onClear={handleClearSearch}
 				/>
 
-				<Button className="max-w-[150px] bg-default-700 text-white">
+				<Button onPress={onClickbuttonTopContent} className="max-w-[150px] bg-default-700 text-white">
 					{buttonTopContent}
 				</Button>
 			</div>

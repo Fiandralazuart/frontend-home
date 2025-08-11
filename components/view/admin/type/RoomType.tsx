@@ -1,21 +1,21 @@
 import React, { Key, ReactNode, useCallback, useEffect } from "react";
 import useRoomType from "./useRoomType";
 import Image from "next/image";
-// import DropDownActions from "@/components/common/DropDownActions";
-const DropDownActions = dynamic(() => import("@/components/common/DropDownActions"), {
-	ssr: false, // <--- ini penting
-});
+import DropDownActions from "@/components/common/DropDownActions";
 import { useRouter } from "next/router";
 import DataTable from "@/components/ui/DataTable";
 import COLUMNS_LIST_TYPE from "./RoomType.constant";
-import dynamic from "next/dynamic";
 import useChangeUrl from "@/components/hooks/useChangeUrl";
+import { useDisclosure } from "@heroui/react";
+import AddTypeModal from "./addTypeModal";
+
 
 const RoomType = () => {
 	const { push, isReady, query } = useRouter();
 	const { dataRoomType, isLoadingType, isRefetchingType, refetchType } =
 		useRoomType();
 
+	const addTypeModal = useDisclosure()
 	const { setUrl } = useChangeUrl() 
 
 	useEffect(() => {
@@ -60,8 +60,11 @@ const RoomType = () => {
 						buttonTopContent="Add Room Type"
 						emptyContent="Room Type is empty"
 						totalPages={dataRoomType?.pagination.totalPages}
+						onClickbuttonTopContent={addTypeModal.onOpen}
 					/>
 			)}
+			<AddTypeModal {...addTypeModal} refetchType={refetchType} />
+			
 		</section>
 	) 
 };
