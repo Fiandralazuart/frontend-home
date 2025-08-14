@@ -1,6 +1,7 @@
 interface IRoomType {
-	name: string;
-	icon: string | FileList;
+	_id?: string;
+	name?: string;
+	icon?: string | FileList;
 }
 
 export { IRoomType };

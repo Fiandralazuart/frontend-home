@@ -43,5 +43,5 @@ backend controller media				- clear
 Frontend inputFile file					- clear
 Frontend add room type					- clear
 Frontend delete room type				- clear
-Frontend details room type				- planning
+Frontend details room type				- progress
 

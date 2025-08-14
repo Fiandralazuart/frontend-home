@@ -9,7 +9,7 @@ import { CiMenuKebab } from "react-icons/ci";
 
 interface PropTypes {
 	onPressButtonDetails: () => void;
-	onPressButtonDelete?: () => void;
+	onPressButtonDelete: () => void;
 }
 
 const DropDownActions = (props: PropTypes) => {
@@ -17,9 +17,9 @@ const DropDownActions = (props: PropTypes) => {
 
 	return (
 		<Dropdown className="bg-white shadow-sm">
-			<DropdownTrigger className="flex items-center justify-center bg-transparent">
-				<Button isIconOnly size="sm" className="w-full">
-					<CiMenuKebab className="text-black"/>
+			<DropdownTrigger className="bg-transparent ">
+				<Button isIconOnly size="sm" className="">
+					<CiMenuKebab className="text-black" />
 				</Button>
 			</DropdownTrigger>
 

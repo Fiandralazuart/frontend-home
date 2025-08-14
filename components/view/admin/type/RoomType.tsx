@@ -35,14 +35,16 @@ const RoomType = () => {
 			const cellValue = type[columnKey as keyof typeof type];
 
 			switch (columnKey) {
-				// case "icon":
-				// 	return (
-				// 		<Image src={`${cellValue}`} alt="icon" width={100} height={200} />
-				// 	);
+				case "icon":
+					return (
+						<Image className="m-auto" src={`${cellValue}`} alt="icon" width={100} height={200} />
+					);
 				case "actions":
 					return (
 						<DropDownActions
-							onPressButtonDetails={() => push(`/admin/type/${type._id}`)}
+							onPressButtonDetails={() => {
+								push(`/admin/type/${type._id}`)
+							}}
 							onPressButtonDelete={() => {
 								setSelectedId(`${type._id}`);
 								deleteTypeModal.onOpen();

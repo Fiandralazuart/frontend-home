@@ -116,7 +116,7 @@ const DataTable = (props: PropTypes) => {
 		>
 			<TableHeader columns={columns}>
 				{(column) => (
-					<TableColumn key={column.uid as Key}>
+					<TableColumn style={{textAlign: "center"}} key={column.uid as Key}>
 						{column.name as string}
 					</TableColumn>
 				)}
@@ -135,7 +135,7 @@ const DataTable = (props: PropTypes) => {
 				{(item) => (
 					<TableRow key={item._id as Key}>
 						{(columnKey) => (
-							<TableCell>{renderCell(item, columnKey)}</TableCell>
+							<TableCell className="text-center">{renderCell(item, columnKey)}</TableCell>
 						)}
 					</TableRow>
 				)}
