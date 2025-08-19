@@ -4,7 +4,7 @@ import DashboardLayout from "@/layouts/dashboardLayout/DasboardLayout"
 const AdminDetailTypePage = () => {
 
 	return (
-		<DashboardLayout title="Details Type" description="Manage Information for this Category" type="admin">
+		<DashboardLayout title="Details Type" description="Manage Information for this type" type="admin">
 			<DetailsType />
 		</DashboardLayout>
 	)

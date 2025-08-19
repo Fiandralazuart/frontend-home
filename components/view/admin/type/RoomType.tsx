@@ -70,6 +70,7 @@ const RoomType = () => {
 					emptyContent="Room Type is empty"
 					totalPages={dataRoomType?.pagination.totalPages}
 					onClickbuttonTopContent={addTypeModal.onOpen}
+					searchPlaceholder="Search Type"
 				/>
 			)}
 			<AddTypeModal {...addTypeModal} refetchType={refetchType} />

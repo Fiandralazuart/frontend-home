@@ -4,12 +4,14 @@ import DataTable from "@/components/ui/DataTable";
 import useAccomodation from "./useAccomodation";
 import Image from "next/image";
 import { Key, ReactNode, useCallback, useEffect, useState } from "react";
-import { Chip } from "@heroui/react";
+import { Chip, useDisclosure } from "@heroui/react";
 import DropDownActions from "@/components/common/DropDownActions";
 import useChangeUrl from "@/components/hooks/useChangeUrl";
 import { Button } from "@heroui/button";
 import TypeChip from "@/components/common/TypeChip";
 import { convertIDR } from "@/utils/currency";
+import AddAccomodationModal from "./addAccomodationModal";
+import DeleteAccomodationModal from "./deleteAccomodationModal";
 
 const Accomodation = () => {
 	const { query, push, isReady } = useRouter();
@@ -23,6 +25,9 @@ const Accomodation = () => {
 		setSelectedId,
 	} = useAccomodation();
 
+	const addAccomodationModal = useDisclosure();
+	const deleteAccomodationModal = useDisclosure();
+
 	const { setUrl } = useChangeUrl();
 
 	useEffect(() => {
@@ -33,16 +38,16 @@ const Accomodation = () => {
 		(accomodation: Record<string, unknown>, columnKey: Key) => {
 			const cellValue = accomodation[columnKey as keyof typeof accomodation];
 			switch (columnKey) {
-				// case "image":
-				// 	return (
-				// 		<Image
-				// 			className="object-cover rounded-lg aspect-video w-36"
-				// 			src={`${cellValue}`}
-				// 			alt="icon"
-				// 			width={200}
-				// 			height={100}
-				// 		/>
-				// 	);
+				case "image":
+					return (
+						<Image
+							className="object-cover m-auto rounded-lg aspect-video w-36"
+							src={`${cellValue}`}
+							alt="icon"
+							width={200}
+							height={100}
+						/>
+					);
 				case "type":
 					return <TypeChip cellValue={`${cellValue}`} />;
 				case "price":
@@ -50,7 +55,7 @@ const Accomodation = () => {
 				case "isPublish":
 					return (
 						<Chip
-							color={cellValue === true ? "success" : "warning"}
+							color={cellValue === true ? "success" : "danger"}
 							size="sm"
 							variant="flat"
 						>
@@ -65,7 +70,7 @@ const Accomodation = () => {
 							}
 							onPressButtonDelete={() => {
 								setSelectedId(`${accomodation._id}`);
-								// deleteEventModal.onOpen();
+								deleteAccomodationModal.onOpen();
 							}}
 						/>
 					);
@@ -85,12 +90,23 @@ const Accomodation = () => {
 					renderCell={renderCell}
 					isLoading={isLoadingGetAccomodation}
 					buttonTopContent="Add Accomodation"
-					onClickbuttonTopContent={() => {}}
+					onClickbuttonTopContent={addAccomodationModal.onOpen}
 					emptyContent="Accomodation is Empty"
 					totalPages={dataAccomodation?.pagination.totalPages}
+					searchPlaceholder="Search Accomodation"
 				/>
 			)}
-			
+
+			<AddAccomodationModal
+				{...addAccomodationModal}
+				refetchAccomodation={refetchAccomodation}
+			/>
+			<DeleteAccomodationModal
+				{...deleteAccomodationModal}
+				refetchAccomodation={refetchAccomodation}
+				selectedId={selectedId}
+				setSelectedId={setSelectedId}
+			/>
 		</section>
 	);
 };

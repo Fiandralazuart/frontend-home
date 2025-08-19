@@ -11,7 +11,7 @@ import useAddTypeModal from "./useAddTypeModal";
 import { Button } from "@heroui/button";
 import InputFile from "@/components/ui/InputFIle";
 import { Spinner } from "@heroui/spinner";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 interface PropTypes {
 	isOpen: boolean;

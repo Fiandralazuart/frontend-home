@@ -4,7 +4,7 @@ import typeServices from "@/services/type.service";
 import { IRoomType } from "@/types/type";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useMutation } from "@tanstack/react-query";
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 

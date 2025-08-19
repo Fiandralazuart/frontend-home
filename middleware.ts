@@ -7,13 +7,11 @@ import path from "path";
 // NextRequest digunakan untuk mengakses informasi tentang request yang dilakukan user
 
 export async function middleware(request: NextRequest) {
-	console.log("middleware success")
 	const token: JWTExtended | null = await getToken({
 		req: request,
 		secret: environment.SECRET
 	})
 	const { pathname } = request.nextUrl
-	console.log("dataToken", token)
 
 	if(pathname === "/auth/login" || pathname === "/auth/register"){
 		if(token){

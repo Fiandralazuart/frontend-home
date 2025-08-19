@@ -1,62 +1,71 @@
 Project Planning
+
 under 30 juli 2025
-ERD dan flow sederhana					- progress
-design UI/UX tahap awal					- clear
-setup backend								- clear
-setup Frontend								- clear
-register dan login page					- clear
-activation page							- clear
+ERD dan flow sederhana							- progress
+design UI/UX tahap awal							- clear
+setup backend										- clear
+setup Frontend										- clear
+register dan login page							- clear
+activation page									- clear
 
 02 agustus 2025
-membuat toaster 							- clear
-membuat appshell 							- clear
-membuat activation system				- clear
+membuat toaster 									- clear
+membuat appshell 									- clear
+membuat activation system						- clear
 
 04 agustus 2025
-middleware handle otorisasi			- clear
-middleware handle redirect page		- clear
-update design UI/UX Accomodation		- clear
+middleware handle otorisasi					- clear
+middleware handle redirect page				- clear
+update design UI/UX Accomodation				- clear
 
 05 agustus 2025
-design UI/UX Room Type					- clear
-design UI/UX Reservation				- clear
-design UI/UX banner						- clear
-design UI/UX member						- clear
-backend Type models & controller		- clear
+design UI/UX Room Type							- clear
+design UI/UX Reservation						- clear
+design UI/UX banner								- clear
+design UI/UX member								- clear
+backend Type models & controller				- clear
 
 06 agustus 2025
-prepare dashboard layout				- clear
-prepare Datatable							- clear
-prepare DropDownAction					- clear
-Frontend room type tahap awal			- clear
+prepare dashboard layout						- clear
+prepare Datatable									- clear
+prepare DropDownAction							- clear
+Frontend room type tahap awal					- clear
 
 07 agustus 2025
-hooks debounce								- clear
-hooks url									- clear
-Frontend dashboard type room			- clear
+hooks debounce										- clear
+hooks url											- clear
+Frontend dashboard type room					- clear
 
 09 agustus 2025
-backend utils media uploader			- clear
-backend controller media				- clear
+backend utils media uploader					- clear
+backend controller media						- clear
 
 11 agustus 2025
-Frontend inputFile file					- clear
-Frontend add room type					- clear
-Frontend delete room type				- clear
+Frontend inputFile file							- clear
+Frontend add room type							- clear
+Frontend delete room type						- clear
 
 14 agustus 2025
-Frontend details room type				- clear
-Backend Location							- clear
-Backend Accomodation Model				- clear
-Backend Accomodation Controller		- clear
+Frontend details room type						- clear
+Backend Location									- clear
+Backend Accomodation Model						- clear
+Backend Accomodation Controller				- clear
 
 15 agustus 2025
-update backend Accomodation			- clear
-backend photos 							- clear
-Frontend Accomodation Dashboard		- clear
+update backend Accomodation					- clear
+backend photos 									- clear
+Frontend Accomodation Dashboard				- clear
 
-16 agustus 2025
-Frontend Accomodation add modal		- planning
-Frontend Accomodation delete modal	- planning
-Frontend Accomodation details			- planning
+18 agustus 2025
+Frontend Accomodation add modal				- clear
+Frontend Accomodation delete modal			- clear
+Frontend Accomodation details image			- clear
+
+19 agustus 2025
+Frontend Accomodation details info					- clear
+Frontend Accomodation details location				- clear
+Frontend Accomodation PhotosTab						- planning
+Frontend Accomodation PhotosTab add modal			- planning
+Frontend Accomodation PhotosTab delete modal		- planning
+Frontend Accomodation PhotosTab details photos	- planning
 

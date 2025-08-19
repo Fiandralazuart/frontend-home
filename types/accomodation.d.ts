@@ -3,20 +3,31 @@ interface IBookedDate {
 	end: string;
 }
 
+export interface IRegency {
+	id: string;
+	name: string;
+}
+
 export interface IAccomodation {
 	_id?: string;
-	image?: string;
+	image?: string | FileList;
 	name?: string;
 	type?: string;
-	price?: number;
+	price?: string;
 	description?: string;
 	facilities?: string[];
-	isPublish?: boolean;
+	isPublish?: string;
 	slug?: string;
 	bookedDates?: IBookedDate[];
 	location?: {
 		address: string;
-      region: string;
-      coordinates: number[]
-   };
+		region: string;
+		link: string;
+	};
+}
+
+export interface IAccomodationForm extends IAccomodation {
+	address: string;
+	region: string;
+	link: string;
 }

@@ -26,6 +26,7 @@ interface PropTypes {
 	onClickbuttonTopContent: () => void;
 	emptyContent: string;
 	totalPages: number;
+	searchPlaceholder: string;
 }
 
 const DataTable = (props: PropTypes) => {
@@ -38,6 +39,7 @@ const DataTable = (props: PropTypes) => {
 		onClickbuttonTopContent,
 		emptyContent,
 		totalPages,
+		searchPlaceholder
 	} = props;
 
 	const {
@@ -59,7 +61,7 @@ const DataTable = (props: PropTypes) => {
 						inputWrapper: "border-gray-300",
 					}}
 					isClearable
-					placeholder="Search Type"
+					placeholder={searchPlaceholder}
 					startContent={<CiSearch />}
 					onChange={handleSearch}
 					onClear={handleClearSearch}

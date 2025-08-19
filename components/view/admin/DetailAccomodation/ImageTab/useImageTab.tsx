@@ -1,17 +1,15 @@
 import useMediaHandling from "@/components/hooks/useMediaHandling";
 import { yupResolver } from "@hookform/resolvers/yup";
-import React from "react";
 import { useForm } from "react-hook-form";
-import * as yup from "yup"
+import * as yup from 'yup'
 
-
-const schemaUpdateIcon = yup.object().shape({
-	icon: yup
+const schemaUpdateImage = yup.object().shape({
+	image: yup
 		.mixed<FileList | string>()
-		.required('Please input icon of category'),
+		.required('Please input image of category'),
 });
 
-const useCoverTab = () => {
+const useImageTab = () => {
 	const { 
 		control,
 		handleSubmit,
@@ -19,9 +17,9 @@ const useCoverTab = () => {
 		watch,
 		setValue,
 		reset,
-		formState: { errors: errosUpdateIcon}
+		formState: { errors: errosUpdateImage}
 	} = useForm({
-		resolver: yupResolver(schemaUpdateIcon)
+		resolver: yupResolver(schemaUpdateImage)
 	})
 
 	const { 
@@ -31,38 +29,39 @@ const useCoverTab = () => {
 		handleUploadFile
 	} = useMediaHandling()
 
-	const preview = watch("icon")
-	const fileUrl = getValues("icon")
+	const preview = watch("image")
+	const fileUrl = getValues("image")
 
-	const handleUploadIcon = (
+	const handleUploadImage = (
 		files: FileList,
 		onChange: (files: FileList | undefined) => void 
 	) => {
 		handleUploadFile(files, onChange, (fileUrl: string | undefined) => {
 			if(fileUrl) {
-				setValue("icon", fileUrl)
+				setValue("image", fileUrl)
 			}
 		})
 	}
 
-	const handleDeleteIcon = (
+	const handleDeleteImage = (
 		onChange: (files: FileList | undefined) => void
 	) => {
 		handleDeleteFile(fileUrl, () => onChange(undefined))
 	}
 
+	
 	return {
 		control,
 		handleSubmit,
 		reset,
-		errosUpdateIcon,
+		errosUpdateImage,
 
-		handleDeleteIcon,
-		handleUploadIcon,
+		handleDeleteImage,
+		handleUploadImage,
 		isPendingDeleteFile,
 		isPendingUploadFile,
 		preview
 	};
 };
 
-export default useCoverTab;
+export default useImageTab;
