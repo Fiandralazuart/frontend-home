@@ -1,4 +1,4 @@
-import React, { Key, ReactNode, useEffect, useMemo } from "react";
+import React, { Key, ReactNode, useMemo } from "react";
 import {
 	Table,
 	TableHeader,
@@ -25,8 +25,11 @@ interface PropTypes {
 	buttonTopContent: string;
 	onClickbuttonTopContent: () => void;
 	emptyContent: string;
-	totalPages: number;
+	totalPages?: number;
 	searchPlaceholder: string;
+	displaySearch?: boolean;
+	displayBottom?: boolean;
+	buttonCondition?: boolean;
 }
 
 const DataTable = (props: PropTypes) => {
@@ -39,9 +42,13 @@ const DataTable = (props: PropTypes) => {
 		onClickbuttonTopContent,
 		emptyContent,
 		totalPages,
-		searchPlaceholder
+		searchPlaceholder,
+		displaySearch = true,
+		displayBottom = true,
+		buttonCondition
 	} = props;
-
+	console.log(data.length)
+	console.log(buttonCondition)
 	const {
 		handleSearch,
 		handleClearSearch,
@@ -54,7 +61,8 @@ const DataTable = (props: PropTypes) => {
 	const TopContent = useMemo(() => {
 		return (
 			<div className="flex flex-col gap-2 lg:justify-between lg:flex-row">
-				<Input
+				{displaySearch ? (
+					<Input
 					variant="bordered"
 					className="max-w-[55%] lg:max-w-[40%]"
 					classNames={{
@@ -66,8 +74,11 @@ const DataTable = (props: PropTypes) => {
 					onChange={handleSearch}
 					onClear={handleClearSearch}
 				/>
+				): (
+					""
+				)}
 
-				<Button onPress={onClickbuttonTopContent} className="max-w-[150px] bg-default-700 text-white">
+				<Button isDisabled={buttonCondition && data.length >= 5 ? true : false} onPress={onClickbuttonTopContent} className="max-w-[150px] bg-default-700 text-white">
 					{buttonTopContent}
 				</Button>
 			</div>
@@ -96,7 +107,7 @@ const DataTable = (props: PropTypes) => {
 						cursor: "bg-default-500 text-white",
 					}}
 					page={Number(currentPage)}
-					total={totalPages}
+					total={totalPages || 1}
 					loop
 					showControls
 					onChange={handleChangePage}
@@ -110,7 +121,7 @@ const DataTable = (props: PropTypes) => {
 			className="text-black"
 			topContent={TopContent}
 			topContentPlacement="outside"
-			bottomContent={BottomContent}
+			bottomContent={displayBottom ? BottomContent: ""}
 			classNames={{
 				base: "max-w-full",
 				wrapper: cn({ "overflow-x-hidden": isLoading }),

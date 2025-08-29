@@ -27,15 +27,11 @@ const useLogin = () => {
 
 	
 	const loginService = async (payload: ILogin) => {
-		console.log("🔍 payload untuk signIn", payload);
-		
 		const result = await signIn("credentials", {
 			...payload,
 			redirect: false,
 			callbackUrl,
 		});
-
-		console.log("isi data", result);
 
 		if (result?.error && result?.status === 401) {
 			// throw new Error("Invalid Password for Your Email or Username")

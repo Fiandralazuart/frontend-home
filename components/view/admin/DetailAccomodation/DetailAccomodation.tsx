@@ -4,6 +4,7 @@ import useDetailAccomodation from "./useDetailAccomodation";
 import ImageTab from "./ImageTab/ImageTab";
 import InfoTab from "./InfoTab";
 import LocationTab from "./LocationTab";
+import PhotosTab from "./PhotosTab";
 
 const DetailAccomodation = () => {
 	const {
@@ -41,6 +42,9 @@ const DetailAccomodation = () => {
 					isSuccessUpdate={isSuccessUpdateAccomodation}
 					defaultInputRegion={dataDefaultRegion?.data?.data[0]?.name}
 				/>
+			</Tab>
+			<Tab title="Photos">
+				<PhotosTab />
 			</Tab>
 		</Tabs>
 	);

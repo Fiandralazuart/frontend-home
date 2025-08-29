@@ -31,3 +31,9 @@ export interface IAccomodationForm extends IAccomodation {
 	region: string;
 	link: string;
 }
+
+export interface IPhotos {
+	name?: string;
+	photos?: string;
+	isPublish?: boolean;
+}

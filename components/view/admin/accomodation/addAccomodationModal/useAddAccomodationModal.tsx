@@ -149,11 +149,7 @@ const useAddAccomodationModal = () => {
 
 		control,
 		errors,
-		watch,
-		getValues,
-		setValue,
 		handleSubmit,
-		reset,
 
 		handleAddAccomodation,
 		isPendingAddAccomodation,

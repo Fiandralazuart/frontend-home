@@ -40,11 +40,7 @@ const AddAccomodationModal = (props: PropTypes) => {
 
 		control,
 		errors,
-		watch,
-		getValues,
-		setValue,
 		handleSubmit,
-		reset,
 
 		handleAddAccomodation,
 		isPendingAddAccomodation,

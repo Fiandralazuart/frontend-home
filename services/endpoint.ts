@@ -3,7 +3,8 @@ const endpoint = {
 	TYPE: "/type",
 	MEDIA: "/media",
 	ACCOMODATION: "/accomodation",
-	REGION: "/regions"
+	REGION: "/regions",
+	PHOTOS: "/photos"
 }
 
 export default endpoint
