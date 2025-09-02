@@ -21,10 +21,6 @@ const Reservation = () => {
 		isLoadingDataReservation,
 		isRefetchingDataReservation,
 		refetchReservation,
-
-		allAccomodation,
-		isLoadingAccomodation,
-
 		selectedId,
 		setSelectedId,
 	} = useReservation();

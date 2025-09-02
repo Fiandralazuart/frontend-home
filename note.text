@@ -86,4 +86,8 @@ Backend reservation:
 Fix problem backend								- clear		
 Frontend table reservation						- clear
 Frontend delete reservation					- clear
+Backend Banner:
+- Banner model										- progress
+- Banner controller								- progress
+- Banner route										- progress
 

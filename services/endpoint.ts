@@ -6,6 +6,7 @@ const endpoint = {
 	REGION: "/regions",
 	PHOTOS: "/photos",
 	RESERVATION: "/reservation",
+	BANNER: "/banners",
 }
 
 export default endpoint
