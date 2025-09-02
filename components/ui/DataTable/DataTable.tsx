@@ -29,6 +29,7 @@ interface PropTypes {
 	searchPlaceholder: string;
 	displaySearch?: boolean;
 	displayBottom?: boolean;
+	displayAddButton?: boolean;
 	buttonCondition?: boolean;
 }
 
@@ -45,10 +46,11 @@ const DataTable = (props: PropTypes) => {
 		searchPlaceholder,
 		displaySearch = true,
 		displayBottom = true,
-		buttonCondition
+		displayAddButton = true,
+		buttonCondition,
 	} = props;
-	console.log(data.length)
-	console.log(buttonCondition)
+	console.log(data.length);
+	console.log(buttonCondition);
 	const {
 		handleSearch,
 		handleClearSearch,
@@ -63,24 +65,30 @@ const DataTable = (props: PropTypes) => {
 			<div className="flex flex-col gap-2 lg:justify-between lg:flex-row">
 				{displaySearch ? (
 					<Input
-					variant="bordered"
-					className="max-w-[55%] lg:max-w-[40%]"
-					classNames={{
-						inputWrapper: "border-gray-300",
-					}}
-					isClearable
-					placeholder={searchPlaceholder}
-					startContent={<CiSearch />}
-					onChange={handleSearch}
-					onClear={handleClearSearch}
-				/>
-				): (
+						variant="bordered"
+						className="max-w-[55%] lg:max-w-[40%]"
+						classNames={{
+							inputWrapper: "border-gray-300",
+						}}
+						isClearable
+						placeholder={searchPlaceholder}
+						startContent={<CiSearch />}
+						onChange={handleSearch}
+						onClear={handleClearSearch}
+					/>
+				) : (
 					""
 				)}
 
-				<Button isDisabled={buttonCondition && data.length >= 5 ? true : false} onPress={onClickbuttonTopContent} className="max-w-[150px] bg-default-700 text-white">
-					{buttonTopContent}
-				</Button>
+				{displayAddButton && (
+					<Button
+						isDisabled={buttonCondition && data.length >= 5 ? true : false}
+						onPress={onClickbuttonTopContent}
+						className="max-w-[150px] bg-default-700 text-white"
+					>
+						{buttonTopContent}
+					</Button>
+				)}
 			</div>
 		);
 	}, [buttonTopContent]);
@@ -121,7 +129,7 @@ const DataTable = (props: PropTypes) => {
 			className="text-black"
 			topContent={TopContent}
 			topContentPlacement="outside"
-			bottomContent={displayBottom ? BottomContent: ""}
+			bottomContent={displayBottom ? BottomContent : ""}
 			classNames={{
 				base: "max-w-full",
 				wrapper: cn({ "overflow-x-hidden": isLoading }),
@@ -129,7 +137,7 @@ const DataTable = (props: PropTypes) => {
 		>
 			<TableHeader columns={columns}>
 				{(column) => (
-					<TableColumn style={{textAlign: "center"}} key={column.uid as Key}>
+					<TableColumn style={{ textAlign: "center" }} key={column.uid as Key}>
 						{column.name as string}
 					</TableColumn>
 				)}
@@ -148,7 +156,9 @@ const DataTable = (props: PropTypes) => {
 				{(item) => (
 					<TableRow key={item._id as Key}>
 						{(columnKey) => (
-							<TableCell className="text-center">{renderCell(item, columnKey)}</TableCell>
+							<TableCell className="text-center">
+								{renderCell(item, columnKey)}
+							</TableCell>
 						)}
 					</TableRow>
 				)}

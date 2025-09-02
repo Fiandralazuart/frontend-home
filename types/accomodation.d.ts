@@ -35,5 +35,5 @@ export interface IAccomodationForm extends IAccomodation {
 export interface IPhotos {
 	name?: string;
 	photos?: string;
-	isPublish?: boolean;
+	isPublish?: string;
 }

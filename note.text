@@ -69,5 +69,21 @@ Frontend Accomodation PhotosTab				- clear
 27 agustus 2025
 Frontend Accomodation PhotosTab add modal			- clear
 Frontend Accomodation PhotosTab delete modal		- clear
-Frontend Accomodation PhotosTab details photos	- planning
+
+28-29 agustus 2025
+Frontend Accomodation PhotosTab details photos	- clear
+
+31 agustus 2025
+flow backend										- clear
+
+01 september 2025 
+Backend reservation:
+- reservation model								- clear
+- reservation controller						- clear
+- reservation route								- clear
+
+02 september 2025 
+Fix problem backend								- clear		
+Frontend table reservation						- clear
+Frontend delete reservation					- clear
 

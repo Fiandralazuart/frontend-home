@@ -4,6 +4,7 @@ import { Dispatch, SetStateAction, useEffect } from "react";
 import useDeleteAccomodation from "./useDeleteAccomodation";
 import { Spinner } from "@heroui/spinner";
 import SuccessPage from "@/pages/auth/register/success";
+import { set } from "react-hook-form";
 
 interface PropTypes {
 	isOpen: boolean;
@@ -24,6 +25,7 @@ const DeleteAccomodationModal = (props: PropTypes) => {
 
 	useEffect(() => {
 		if(isSuccessDeleteAccomodation){
+			setSelectedId("")
 			onClose()
 			refetchAccomodation()
 		}

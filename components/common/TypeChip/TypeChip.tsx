@@ -9,12 +9,10 @@ interface PropTypes {
 }
 
 const TypeChip = ({ cellValue }: PropTypes) => {
-	// Fetch semua tipe akomodasi sekali saja
 	const { data: allTypes, isLoading } = useQuery({
 		queryKey: ["types"], // tanpa cellValue, supaya cache digunakan ulang
 		queryFn: async () => {
 			const result = await typeServices.findAll();
-			// pastikan API return array of object { _id, name }
 			return result.data.data;
 		},
 		staleTime: 5 * 60 * 1000, // 5 menit cache

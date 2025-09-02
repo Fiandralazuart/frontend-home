@@ -4,7 +4,8 @@ const endpoint = {
 	MEDIA: "/media",
 	ACCOMODATION: "/accomodation",
 	REGION: "/regions",
-	PHOTOS: "/photos"
+	PHOTOS: "/photos",
+	RESERVATION: "/reservation",
 }
 
 export default endpoint
