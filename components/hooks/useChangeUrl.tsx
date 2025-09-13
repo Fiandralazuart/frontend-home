@@ -10,6 +10,7 @@ const useChangeUrl = () => {
 	const currentLimit = router.query.limit
 	const currentPage = router.query.page
 	const currentSearch = router.query.search
+	const currentType = router.query.type;
 
 	const setUrl = () => {
 		router.replace({
@@ -64,17 +65,42 @@ const useChangeUrl = () => {
 		})
 	}
 
+	const handleChangeType = (type: string) => {
+		router.push({
+			query: {
+				...router.query,
+				type,
+				page: DEFAULT_PAGE
+			}
+		})
+	};
+
+	const setUrlExplore = () => {
+		router.replace({
+				query: {
+					limit: currentLimit || DEFAULT_LIMIT,
+					page: currentPage || DEFAULT_PAGE,
+					type: currentType || "",
+				},
+			});
+	
+}
+
 	return {
 		setUrl,
 		currentLimit,
 		currentPage, 
 		currentSearch,
+		currentType,
 
 		handleSearch,
 		handleClearSearch,
 		handleChangeLimit,
 		handleChangePage,
+		handleChangeType,
+
+		setUrlExplore
 	};
 };
 
-export default useChangeUrl;
+export default useChangeUrl
