@@ -11,6 +11,7 @@ const accomodationService = {
 	delete: (id: string) => instance.delete(`${endpoint.ACCOMODATION}/${id}`),
 	getRegencyById: (id: string) => instance.get(`${endpoint.REGION}/${id}/regency`),
 	findAllPhotos: () => instance.get(`${endpoint.PHOTOS}`),
+	findAllPhotosByAccomodation: (id: string) => instance.get(`${endpoint.PHOTOS}/${id}/photos`),
 	findPhotosById: (id: string) => instance.get(`${endpoint.PHOTOS}/${id}`),
 	createPhotos: (payload: IPhotos) => instance.post(`${endpoint.PHOTOS}`, payload),
 	updatePhotos: (id: string, payload: IPhotos) => instance.put(`${endpoint.PHOTOS}/${id}`, payload),

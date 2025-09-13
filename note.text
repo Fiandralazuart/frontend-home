@@ -74,20 +74,44 @@ Frontend Accomodation PhotosTab delete modal		- clear
 Frontend Accomodation PhotosTab details photos	- clear
 
 31 agustus 2025
-flow backend										- clear
+flow backend							- clear
 
 01 september 2025 
 Backend reservation:
-- reservation model								- clear
-- reservation controller						- clear
-- reservation route								- clear
+- reservation model					- clear
+- reservation controller			- clear
+- reservation route					- clear
 
 02 september 2025 
-Fix problem backend								- clear		
-Frontend table reservation						- clear
-Frontend delete reservation					- clear
+Fix problem backend					- clear		
+Frontend table reservation			- clear
+Frontend delete reservation		- clear
 Backend Banner:
-- Banner model										- progress
-- Banner controller								- progress
-- Banner route										- progress
+- Banner model							- clear
+- Banner controller					- clear
+- Banner route							- clear
+Frontend table banner				- clear
+Frontend delete banner				- clear
+Frontend add banner					- clear
+Frontend details banner				- clear
 
+03 september 2025
+Backend update get photos			- clear
+Frontend fix photos Accomodation	- clear
+Frontend Home page:
+- landingPageLayout					- clear
+- landingPageLayoutNavbar			- clear
+- landingPageLayoutFooter			- clear
+HomePage:
+- Homeimage								- clear
+- AccomodationList					- clear
+- TypeList								- clear
+- About									- Pending
+- Contact								- Pending
+
+03 september 2025
+Frontend user authentication		- Planing
+Frontend Accomodation page			- Planing
+Frontend add reservation			- Planing 
+Frontend Explore page				- Planing
+ 

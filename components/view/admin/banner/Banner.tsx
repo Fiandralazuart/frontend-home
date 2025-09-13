@@ -8,6 +8,7 @@ import DropDownActions from "@/components/common/DropDownActions";
 import DataTable from "@/components/ui/DataTable";
 import { COLUMN_LIST_BANNER } from "./Banner.constant";
 import DeleteBannerModal from "./DeleteBannerModal";
+import AddBannerModal from "./AddBannerModal";
 
 const Banner = () => {
 	const { isReady, push, query } = useRouter();
@@ -22,7 +23,8 @@ const Banner = () => {
 	} = useBanner();
 
 	const { setUrl } = useChangeUrl();
-	const deleteBannerModal = useDisclosure()
+	const addBannerModal = useDisclosure();
+	const deleteBannerModal = useDisclosure();
 
 	useEffect(() => {
 		if (isReady) setUrl();
@@ -55,7 +57,7 @@ const Banner = () => {
 				case "actions":
 					return (
 						<DropDownActions
-							onPressButtonDetails={() => push(`/admin/banner/${banner._id}`)}
+							onPressButtonDetails={() => push(`/admin/banners/${banner._id}`)}
 							onPressButtonDelete={() => {
 								setSelectedId(`${banner._id}`);
 								deleteBannerModal.onOpen();
@@ -78,12 +80,14 @@ const Banner = () => {
 					renderCell={renderCell}
 					isLoading={isLoadingBanner}
 					buttonTopContent="Add Banner"
-					onClickbuttonTopContent={() => {}}
+					onClickbuttonTopContent={addBannerModal.onOpen}
 					emptyContent="Reservation is Empty"
 					totalPages={dataBanner?.pagination.totalPages}
 					searchPlaceholder="Search Banner"
 				/>
 			)}
+
+			<AddBannerModal {...addBannerModal} refetchBanner={refetchBanner} />
 
 			<DeleteBannerModal
 				{...deleteBannerModal}

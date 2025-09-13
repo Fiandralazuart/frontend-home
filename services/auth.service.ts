@@ -11,7 +11,8 @@ const authServices = {
 			Authorization: `Bearer ${token}`
 		}
 	}),
-	activation: (payload: IActivation) => instance.post(`${endpoint.AUTH}/activation`, payload)
+	activation: (payload: IActivation) => instance.post(`${endpoint.AUTH}/activation`, payload),
+	getProfile: () => instance.get(`${endpoint.AUTH}/me`),
 }
 
 export default authServices

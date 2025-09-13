@@ -6,10 +6,13 @@ import { useState } from "react";
 
 const usePhotosTab = () => {
 	const [selectedId, setSelectedId] = useState<string>("")
-	const { isReady } = useRouter();
+	const { isReady, query } = useRouter();
+
+	console.log(query.id)
 
 	const getPhotos = async () => {
-		const result = await accomodationService.findAllPhotos();
+		const id = `${query.id}`
+		const result = await accomodationService.findAllPhotosByAccomodation(id);
 		const { data } = result
 		return data
 	};
@@ -19,6 +22,8 @@ const usePhotosTab = () => {
 		queryFn: getPhotos,
 		enabled: isReady
 	})
+
+	console.log(dataPhotos)
 
 	return {
 		dataPhotos,

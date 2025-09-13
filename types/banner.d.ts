@@ -1,6 +1,7 @@
 
 export interface IBanner {
-	title: string;
-	banner: string;
-	isShow: string;
+	_id?: string;
+	title?: string;
+	banner?: FileList | string;
+	isShow?: string;
 }
