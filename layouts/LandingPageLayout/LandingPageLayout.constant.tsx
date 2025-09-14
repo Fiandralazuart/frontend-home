@@ -3,8 +3,8 @@ import { FaFacebook, FaInstagram, FaTiktok, FaTwitter, FaYoutube } from "react-i
 const NAV_ITEMS = [
 	{
 		label: "Home",
-		href: "",
-		scroll: "home"
+		href: "/",
+		scroll: ""
 	},
 	{
 		label: "Explore",

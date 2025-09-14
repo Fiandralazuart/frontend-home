@@ -19,7 +19,7 @@ const HomeTypeList = (props: PropTypes) => {
 			</CardHeader>
 			<CardBody className="p-0 mt-4">
 				<div className="grid auto-cols-[9rem] grid-flow-col gap-4 overflow-x-auto lg:grid-cols-6">
-					{!isLoadingType && type ? (
+					{!isLoadingType && type.length > 0 ? (
 						type?.map((type) => (
 							<Link
 								className="flex flex-col items-center justify-center gap-2 p-2 cursor-pointer border- aspect-square rounded-xl"
