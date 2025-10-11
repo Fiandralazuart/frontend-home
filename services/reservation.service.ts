@@ -8,6 +8,7 @@ const reservationServices = {
 	findAll: (params?: string) => instance.get(`${endpoint.RESERVATION}/?${params}`),
 	update: (id: string, payload: IReservation) => instance.put(`${endpoint.RESERVATION}/${id}`, payload),
 	findById: (id: string) => instance.get(`${endpoint.RESERVATION}/${id}`),
+	findByMember: () => instance.get(`${endpoint.RESERVATION}-history`),
 	delete: (id: string) => instance.delete(`${endpoint.RESERVATION}/${id}`),
 	updateTransactionStatus: (id: string, status: string) => instance.put(`${endpoint.RESERVATION}/${id}/${status}`),
 }

@@ -22,11 +22,11 @@ interface PropTypes {
 	columns: Record<string, unknown>[];
 	renderCell: (type: Record<string, unknown>, columnKey: Key) => ReactNode;
 	isLoading: boolean;
-	buttonTopContent: string;
-	onClickbuttonTopContent: () => void;
+	buttonTopContent?: string;
+	onClickbuttonTopContent?: () => void;
 	emptyContent: string;
 	totalPages?: number;
-	searchPlaceholder: string;
+	searchPlaceholder?: string;
 	displaySearch?: boolean;
 	displayBottom?: boolean;
 	displayAddButton?: boolean;

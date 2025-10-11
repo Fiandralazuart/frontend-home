@@ -71,10 +71,10 @@ Frontend Accomodation PhotosTab add modal			- clear
 Frontend Accomodation PhotosTab delete modal		- clear
 
 28-29 agustus 2025
-Frontend Accomodation PhotosTab details photos	- clear
+Frontend Accomodation PhotosTab details photos		- clear
 
 31 agustus 2025
-flow backend							- clear
+flow backend						- clear
 
 01 september 2025 
 Backend reservation:
@@ -85,11 +85,11 @@ Backend reservation:
 02 september 2025 
 Fix problem backend					- clear		
 Frontend table reservation			- clear
-Frontend delete reservation		- clear
+Frontend delete reservation			- clear
 Backend Banner:
-- Banner model							- clear
+- Banner model						- clear
 - Banner controller					- clear
-- Banner route							- clear
+- Banner route						- clear
 Frontend table banner				- clear
 Frontend delete banner				- clear
 Frontend add banner					- clear
@@ -103,17 +103,27 @@ Frontend Home page:
 - landingPageLayoutNavbar			- clear
 - landingPageLayoutFooter			- clear
 HomePage:
-- Homeimage								- clear
+- Homeimage							- clear
 - AccomodationList					- clear
-- TypeList								- clear
-- About									- clear
-- Contact								- clear
+- TypeList							- clear
+- About								- clear
+- Contact							- clear
 
 13 september 2025
 Frontend Explore page				- clear
-Frontend Accomodation page			- Planing
-Frontend add reservation			- Planing 
-Frontend user authentication		- Planing
+
+10 oktober 2025
+Frontend Accomodation page			- clear
+Frontend add reservation			- clear 
+
+11 oktober 2025
+Frontend authentication middleware	- clear
+Frontend member dashboard:
+- profile							- planning
+- reservation history				- planning
+- invoice							- planning
+
+
 
 mangkrak nih
  
