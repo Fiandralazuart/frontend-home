@@ -76,7 +76,7 @@ const Reservation = () => {
 					return (
 						<DropDownActions
 							onPressButtonDetails={() =>
-								push(`/admin/reservation/${reservation._id}`)
+								push(`/admin/reservation/${reservation?.transactionId}`)
 							}
 							onPressButtonDelete={() => {
 								setSelectedId(`${reservation.transactionId}`);

@@ -7,6 +7,7 @@ import usePayment from "./usePayment";
 const Payment = () => {
 	const router = useRouter()
 	const { order_id, status } = router.query
+	console.log(order_id)
 
 	const { mutateUpdateTransactionStatus } = usePayment()
 
