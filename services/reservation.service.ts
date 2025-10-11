@@ -9,6 +9,7 @@ const reservationServices = {
 	update: (id: string, payload: IReservation) => instance.put(`${endpoint.RESERVATION}/${id}`, payload),
 	findById: (id: string) => instance.get(`${endpoint.RESERVATION}/${id}`),
 	delete: (id: string) => instance.delete(`${endpoint.RESERVATION}/${id}`),
+	updateTransactionStatus: (id: string, status: string) => instance.put(`${endpoint.RESERVATION}/${id}/${status}`),
 }
 
 export default reservationServices
