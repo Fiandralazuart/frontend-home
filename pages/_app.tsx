@@ -16,6 +16,7 @@ import "@/styles/globals.css";
 import { onErrorHandler } from "@/libs/axios/responseHandler";
 import { ToasterProvider } from "@/context/ToasterContex";
 import AppShells from "@/components/common/AppShells";
+import { Analytics } from "@vercel/analytics/next"
 
 // queryCache digunakan untuk menyimpan data hasil query yang kemudian akan digunakan untuk handle terhadap error
 
@@ -54,6 +55,7 @@ export default function App({
 					</NextThemesProvider>
 				</HeroUIProvider>
 			</QueryClientProvider>
+			<Analytics />
 		</SessionProvider>
 	);
 }

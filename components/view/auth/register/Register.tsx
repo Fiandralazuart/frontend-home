@@ -29,7 +29,7 @@ const Register = () => {
 				<Image
 					alt="logo"
 					height={500}
-					src="/images/general/login-baru.png"
+					src="/images/general/Login-baru.png"
 					width={500}
 				/>
 			</div>

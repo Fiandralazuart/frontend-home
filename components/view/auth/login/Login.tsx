@@ -29,7 +29,7 @@ const Login = () => {
 	return (
 		<div className="flex flex-col items-center justify-center gap-10 lg:flex-row lg:gap-20">
 			<Image
-				src="/images/general/login-baru.png"
+				src="/images/general/Login-baru.png"
 				alt="logo"
 				width={500}
 				height={300}
