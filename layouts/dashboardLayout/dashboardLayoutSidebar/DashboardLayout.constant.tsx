@@ -32,7 +32,7 @@ const memberSidebar = [
 	{
 		key: "reservation",
 		label: "Reservation",
-		href: "/admin/reservation",
+		href: "/member/transaction",
 		icon: <CiCalendarDate />,
 	},
 	{
