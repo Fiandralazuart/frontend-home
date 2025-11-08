@@ -9,6 +9,12 @@ interface IRegister {
 	confirmPassword: string;
 }
 
+interface IPassword {
+	oldPassword: string; 
+	password: string;
+	confirmPassword: string;
+}
+
 interface ILogin {
 	identifier: string;
 	password: string;
@@ -49,4 +55,5 @@ export {
 	SessionExtended,
 	IActivation,
 	IProfile,
+	IPassword
 };

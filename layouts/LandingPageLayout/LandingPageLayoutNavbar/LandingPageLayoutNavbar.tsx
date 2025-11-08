@@ -31,6 +31,7 @@ import { Button, ButtonProps } from "@heroui/button";
 const LandingPageLayoutNavbar = () => {
 	const router = useRouter();
 	const session = useSession();
+	const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 	const {
 		dataProfile,
 		RefetchDataProfile,
@@ -44,7 +45,14 @@ const LandingPageLayoutNavbar = () => {
 	} = useLandingPageLayoutNavbar();
 
 	return (
-		<Navbar maxWidth="full" isBordered isBlurred={false} shouldHideOnScroll>
+		<Navbar
+			maxWidth="full"
+			isBordered
+			isBlurred={false}
+			shouldHideOnScroll
+			isMenuOpen={isMenuOpen}
+			onMenuOpenChange={setIsMenuOpen}
+		>
 			<div className="flex items-center w-full gap-8 ">
 				<NavbarBrand as={Link} href={"/"}>
 					<Image
@@ -59,17 +67,35 @@ const LandingPageLayoutNavbar = () => {
 					{NAV_ITEMS.map((items) => (
 						<NavbarItem
 							key={`nav-${items.label}`}
+							as="button"
+							type="button"
 							onClick={(e) => {
 								if (items.scroll) {
-									e.preventDefault(); // cegah reload
+									e.preventDefault();
 									const el = document.getElementById(items.scroll);
 									if (el) {
-										el.scrollIntoView({ behavior: "smooth" });
+										setTimeout(() => {
+											const y =
+												el.getBoundingClientRect().top + window.scrollY - 90;
+											window.scrollTo({ top: y, behavior: "smooth" });
+										}, 200); // kasih delay 200ms
 									}
 								} else if (items.href) {
 									router.push(items.href);
 								}
 							}}
+							// key={`nav-${items.label}`}
+							// onClick={(e) => {
+							// 	if (items.scroll) {
+							// 		e.preventDefault(); // cegah reload
+							// 		const el = document.getElementById(items.scroll);
+							// 		if (el) {
+							// 			el.scrollIntoView({ behavior: "smooth" });
+							// 		}
+							// 	} else if (items.href) {
+							// 		router.push(items.href);
+							// 	}
+							// }}
 							className={cn(
 								"font-medium text-lg text-default-700 hover:text-blue-500 cursor-pointer",
 								{
@@ -178,9 +204,27 @@ const LandingPageLayoutNavbar = () => {
 
 				<NavbarMenu className="gap-4">
 					{NAV_ITEMS.map((items) => (
-						<NavbarMenuItem key={`nav-${items.label}`}>
-							<Link
-								href={items.href}
+						<NavbarMenuItem
+							key={`nav-${items.label}`}
+							onClick={(e) => {
+								e.preventDefault();
+								setIsMenuOpen(false); // tutup menu
+
+								if (items.scroll) {
+									const el = document.getElementById(items.scroll);
+									if (el) {
+										setTimeout(() => {
+											const y =
+												el.getBoundingClientRect().top + window.scrollY - 90;
+											window.scrollTo({ top: y, behavior: "smooth" });
+										}, 300); // kasih delay biar animasi close selesai
+									}
+								} else if (items.href) {
+									router.push(items.href);
+								}
+							}}
+						>
+							<span
 								className={cn(
 									"font-medium text-default-700 hover:text-blue-500",
 									{
@@ -189,7 +233,7 @@ const LandingPageLayoutNavbar = () => {
 								)}
 							>
 								{items.label}
-							</Link>
+							</span>
 						</NavbarMenuItem>
 					))}
 					{session.status === "authenticated" ? (

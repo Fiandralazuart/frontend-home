@@ -21,9 +21,8 @@ const useProfile = () => {
 	});
 
 	const updateProfile = async (payload: IProfile) => {
-		// const { data } = await authServices.updateProfile(payload);
-		// return data.data;
-		console.log(payload)
+		const { data } = await authServices.updateProfile(payload);
+		return data.data;
 	};
 
 	const {
