@@ -11,13 +11,14 @@ import { convertIDR } from "@/utils/currency";
 import { eachDayOfInterval } from "date-fns";
 import Image from "next/image";
 import { FACILITIES_LIST } from "../admin/accomodation/addAccomodationModal/addAccomodation.constant";
-import { LuDot } from "react-icons/lu";
+import { LuDot, LuMousePointerClick } from "react-icons/lu";
 import { Button } from "@heroui/button";
 import ReservationModal from "./ReservationModal.tsx";
 import CardAccomodation from "@/components/ui/CardAccomodation";
 import { skeleton } from "@heroui/theme";
 import { today, getLocalTimeZone } from "@internationalized/date";
-
+import Link from "next/link";
+import { FaMapMarkerAlt } from "react-icons/fa";
 
 const DetailAccomodation = () => {
 	const {
@@ -51,24 +52,39 @@ const DetailAccomodation = () => {
 				</Breadcrumbs>
 			</Skeleton>
 			<section className="mt-8 ">
-				<Skeleton
-					isLoaded={!!dataAccomodation?.name}
-					className="w-full h-4 py-4 mb-4 rounded-lg "
-				>
-					<h1 className="px-4 mb-2 text-2xl font-bold lg:text-3xl">
-						{dataAccomodation?.name}
-					</h1>
-				</Skeleton>
-				<Skeleton
-					isLoaded={!!dataAccomodation?.location?.address}
-					className="w-[400px] h-4 py-4 mb-4 rounded-lg "
-				>
-					<div className="text-sm italic lg:text-[17px] flex items-center px-4 gap-2 text-center md:text-start text-[#4F7396]">
-						<p>{dataAccomodation?.location?.address}</p>
-						<LuDot />
-						<p>{convertIDR(dataAccomodation?.price)} / days</p>
+				<div className="flex items-center justify-between">
+					<div>
+						<Skeleton
+							isLoaded={!!dataAccomodation?.name}
+							className="w-full h-4 py-4 mb-4 rounded-lg "
+						>
+							<h1 className="px-4 mb-2 text-2xl font-bold lg:text-3xl">
+								{dataAccomodation?.name}
+							</h1>
+						</Skeleton>
+						<Skeleton
+							isLoaded={!!dataAccomodation?.location?.address}
+							className="w-[400px] h-4 py-4 mb-4 rounded-lg "
+						>
+							<div className="text-sm italic lg:text-[17px] flex items-center px-4 gap-2 text-center md:text-start text-[#4F7396]">
+								<p>{dataAccomodation?.location?.address}</p>
+								<LuDot />
+								<p>{convertIDR(dataAccomodation?.price)} / days</p>
+							</div>
+						</Skeleton>
 					</div>
-				</Skeleton>
+					<div>
+						{dataAccomodation?.location?.link && (
+							<Button
+								as={Link}
+								href={dataAccomodation?.location?.link}
+								className="w-[50px] text-white bg-default-700"
+							>
+								<FaMapMarkerAlt className="text-2xl" />
+							</Button>
+						)}
+					</div>
+				</div>
 
 				<div className="grid grid-cols-1 gap-2 p-2 my-5 auto-cols-fr md:grid-cols-2 lg:grid-cols-5">
 					{dataPhotos
@@ -164,7 +180,7 @@ const DetailAccomodation = () => {
 								}}
 								minValue={today(getLocalTimeZone())}
 							/>
-							<Calendar 
+							<Calendar
 								isDateUnavailable={(dateValue) => {
 									const date = dateValue.toDate("UTC");
 									return disabledDates.some(

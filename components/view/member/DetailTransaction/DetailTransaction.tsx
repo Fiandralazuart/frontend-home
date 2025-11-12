@@ -8,6 +8,7 @@ import { convertIDR } from "@/utils/currency";
 import { Button } from "@heroui/button";
 import { QRCodeSVG } from "qrcode.react";
 import { date } from "yup";
+import Link from "next/link";
 
 const DetailTransaction = () => {
 	const {
@@ -16,6 +17,8 @@ const DetailTransaction = () => {
 		dataAccomodation,
 		isLoadingDataAccomodation,
 	} = useDetailTransaction();
+
+	console.log(dataAccomodation?.location?.link)
 
 	const dateIn = new Date(dataReservation?.checkIn).toLocaleDateString("id-ID", {
 		day: "2-digit",
@@ -30,7 +33,6 @@ const DetailTransaction = () => {
 			year: "numeric",
 		}
 	);
-	console.log(dataAccomodation);
 	return (
 		<Card className="px-5 py-4">
 			<Script
@@ -92,7 +94,7 @@ const DetailTransaction = () => {
 					</div>
 				</div>
 
-				{dataReservation?.status === "completed" && (
+				{dataReservation?.status === "completed" && dataAccomodation?.location?.link && (
 					<Card>
 						<CardBody className="flex gap-6 md:flex-row">
 							<div className="max-w-[300px] md:w-[300px]">
@@ -119,7 +121,7 @@ const DetailTransaction = () => {
 										{dataAccomodation?.location?.address}
 									</p>
 								</div>
-								<Button className="w-[100px]  text-white bg-default-700">Maps</Button>
+									<Button  as={Link} href={dataAccomodation?.location?.link} className="w-[100px] text-white bg-default-700">Maps</Button>
 							</div>
 						</CardBody>
 					</Card>

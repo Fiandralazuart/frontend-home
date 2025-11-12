@@ -8,6 +8,8 @@ import Link from "next/link";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Button } from "@heroui/button";
 import { Spinner } from "@heroui/spinner";
+import PasswordStrengthMeter from "@/components/common/PasswordChekker";
+import { useState } from "react";
 
 const Register = () => {
 	const {
@@ -19,6 +21,8 @@ const Register = () => {
 		visible,
 		handleVisible,
 	} = useRegister();
+
+	const [Password, setPassword] = useState("");
 
 	const borderColor = {
 		inputWrapper: "border-gray-300",
@@ -34,16 +38,16 @@ const Register = () => {
 				/>
 			</div>
 			<div>
-				<Card className="p-8 text-black bg-white">
-					<CardHeader className="flex justify-center">
-						<h2 className="text-2xl font-bold">Create Account</h2>
+				<Card className="p-6 py-2 text-black bg-white">
+					<CardHeader className="flex justify-center py-4">
+						<h2 className="pt-2 text-2xl font-bold">Create Account</h2>
 					</CardHeader>
-					<CardBody className="flex flex-col items-center ">
+					<CardBody className="flex flex-col items-center py-0 ">
 						{errors.root && (
-						<p className="mb-2 font-medium text-danger">
-							{errors?.root?.message}
-						</p>
-					)}
+							<p className="mb-2 font-medium text-danger">
+								{errors?.root?.message}
+							</p>
+						)}
 
 						<form
 							onSubmit={handleSubmit(handleRegister)}
@@ -57,6 +61,7 @@ const Register = () => {
 								name="fullname"
 								render={({ field }) => (
 									<Input
+										size="sm"
 										autoComplete="off"
 										classNames={borderColor}
 										errorMessage={errors.fullname?.message}
@@ -73,6 +78,7 @@ const Register = () => {
 								name="username"
 								render={({ field }) => (
 									<Input
+										size="sm"
 										autoComplete="off"
 										classNames={borderColor}
 										errorMessage={errors.username?.message}
@@ -89,6 +95,7 @@ const Register = () => {
 								name="email"
 								render={({ field }) => (
 									<Input
+										size="sm"
 										autoComplete="off"
 										classNames={borderColor}
 										errorMessage={errors.email?.message}
@@ -105,6 +112,12 @@ const Register = () => {
 								name="password"
 								render={({ field }) => (
 									<Input
+										size="sm"
+										{...field}
+										onChange={(e) => {
+											setPassword(e.target.value);
+											field.onChange(e);
+										}}
 										autoComplete="off"
 										classNames={borderColor}
 										errorMessage={errors.password?.message}
@@ -112,10 +125,10 @@ const Register = () => {
 										type={visible.password ? "text" : "password"}
 										radius="lg"
 										variant="bordered"
-										{...field}
 										isInvalid={errors.password !== undefined}
 										endContent={
 											<button
+												className="my-auto"
 												type="button"
 												onClick={() => handleVisible("password")}
 											>
@@ -134,6 +147,7 @@ const Register = () => {
 								name="confirmPassword"
 								render={({ field }) => (
 									<Input
+										size="sm"
 										autoComplete="off"
 										classNames={borderColor}
 										errorMessage={errors.confirmPassword?.message}
@@ -145,6 +159,7 @@ const Register = () => {
 										isInvalid={errors.confirmPassword !== undefined}
 										endContent={
 											<button
+												className="my-auto"
 												type="button"
 												onClick={() => handleVisible("confirmPassword")}
 											>
@@ -159,7 +174,13 @@ const Register = () => {
 								)}
 							/>
 
-							<Button className="text-white bg-default-700" type="submit">
+							<PasswordStrengthMeter password={Password} />
+
+							<Button
+								size="md"
+								className="text-white bg-default-700"
+								type="submit"
+							>
 								{isPendingMutateRegister ? <Spinner /> : "Register"}
 							</Button>
 						</form>
